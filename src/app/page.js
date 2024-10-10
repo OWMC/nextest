@@ -1,25 +1,17 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "sbt/distro/header/Header";
+import Button from "./button/Button";
 
 export default function Home() {
+  const handleClick = (name) => {console.log("hello ", name)};
+  
   return (
     <div className={styles.page}>
-        <Header
-  login
-  logoLink={{
-    title: 'Title',
-    url: '#'
-  }}
-  onCreateAccount={() => {}}
-  onLogin={() => {}}
-  onLogout={() => {}}
-/>
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="https://owmc.co.uk/custom/themes/owmc-v5-theme/img/owmc-logo.svg"
+          src="https://owmc.co.uk/content/themes/owmc-v5-theme/img/owmc-logo.svg"
           alt="OWMC logo"
           width={244}
           height={56}
@@ -31,6 +23,8 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+        <Button>Button</Button>
+        <button onClick={() => {handleClick("olly")}}>Hi</button>
         <div>
         </div>  
       </main>
