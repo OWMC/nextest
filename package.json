@@ -13,7 +13,7 @@
     "next-transpile-modules": "^10.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "sbt": "file:../storybook-hintertux"
+    "sbt": "file:..//hintertux/"
   },
   "devDependencies": {
     "eslint": "^8",

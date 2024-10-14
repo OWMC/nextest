@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Button from "./button/Button";
+import Button from "sbt/distro/button/Button";
+import Header from "sbt/distro/header/Header";
 
 export default function Home() {
   const handleClick = (name) => {console.log("hello ", name)};
   
   return (
     <div className={styles.page}>
+      <Header
+        onCreateAccount={() => {}}
+        onLogin={() => {}}
+        onLogout={() => {}}
+      />
       <main className={styles.main}>
         <Image
           className={styles.logo}
@@ -23,8 +29,12 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-        <Button>Button</Button>
-        <button onClick={() => {handleClick("olly")}}>Hi</button>
+        <Button
+          href="hi"
+          label="Button"
+          onClick={() => {}}
+          size="large"
+        />
         <div>
         </div>  
       </main>
