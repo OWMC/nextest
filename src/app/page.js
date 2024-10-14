@@ -1,13 +1,23 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import Button from "sbt/distro/button/Button";
+import Header from "sbt/distro/header/Header";
 
 export default function Home() {
+  const handleClick = (name) => {console.log("hello ", name)};
+  
   return (
     <div className={styles.page}>
+      <Header
+        onCreateAccount={() => {}}
+        onLogin={() => {}}
+        onLogout={() => {}}
+      />
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="https://owmc.co.uk/custom/themes/owmc-v5-theme/img/owmc-logo.svg"
+          src="https://owmc.co.uk/content/themes/owmc-v5-theme/img/owmc-logo.svg"
           alt="OWMC logo"
           width={244}
           height={56}
@@ -19,32 +29,14 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <Button
+          href="hi"
+          label="Button"
+          onClick={() => {}}
+          size="large"
+        />
+        <div>
+        </div>  
       </main>
       <footer className={styles.footer}>
         <a
