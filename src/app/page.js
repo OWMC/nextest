@@ -3,37 +3,40 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Button from "sbt/distro/button/Button";
 import Header from "sbt/distro/header/Header";
+import { useState } from "react";
 
 export default function Home() {
-  const handleClick = (name) => {console.log("hello ", name)};
-  
+  const [userName, setUserName] = useState('');
+  const handleClick = () => {
+    let named = userName === '' ? "qanon" : userName;
+    alert('Hello ' + named + '!');
+  };
+
   return (
     <div className={styles.page}>
       <Header
         onCreateAccount={() => {}}
         onLogin={() => {}}
         onLogout={() => {}}
+        logoLink = {{
+          url: "#",
+          title: "nothing"
+        }}
       />
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://owmc.co.uk/content/themes/owmc-v5-theme/img/owmc-logo.svg"
-          alt="OWMC logo"
-          width={244}
-          height={56}
-          priority
+        <h2>What is your name?</h2>
+        <input
+          className={styles.input}
+          type="text"
+          value={userName}
+          onChange={e => setUserName(e.target.value)}
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <br />
         <Button
-          href="hi"
-          label="Button"
-          onClick={() => {}}
-          size="large"
+          href=""
+          label="Say hi!"
+          onClick={() => {handleClick()}}
+          size="small"
         />
         <div>
         </div>  
